@@ -89,6 +89,12 @@ app.post("/delete",function(req,res){
   })
 });
 
-app.listen(PORT, (req, res)=>{
-     console.log("The Server has started on PORT: "+PORT)
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3600;
+}
+app.listen(port);
+
+app.listen(port, (req, res)=>{
+     console.log("The Server has started successfully"+PORT)
 })
